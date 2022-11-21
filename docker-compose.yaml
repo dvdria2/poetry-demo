@@ -1,0 +1,18 @@
+services:
+  test-poetry:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - DOCKER_USER_NAME=${DOCKER_USER_NAME}
+        - DOCKER_USER_ID=${DOCKER_USER_ID}
+    image: test_poetry:0.1.0
+    container_name: test_poetry_container
+    working_dir: /home/${DOCKER_USER_NAME}/app
+    stdin_open: true
+    tty: true
+    command: /bin/bash
+    volumes:
+      - .:/home/${DOCKER_USER_NAME}/app
+    
+      

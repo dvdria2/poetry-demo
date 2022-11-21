@@ -14,5 +14,7 @@ services:
     command: /bin/bash
     volumes:
       - .:/home/${DOCKER_USER_NAME}/app
+      - ~/.gitconfig:/etc/gitconfig
+      - ~/.ssh:/root/.ssh
     
       

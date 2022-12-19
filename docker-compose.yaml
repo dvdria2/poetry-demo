@@ -16,5 +16,6 @@ services:
       - .:/home/${DOCKER_USER_NAME}/app
       - ~/.gitconfig:/etc/gitconfig
       - ~/.ssh:/home/${DOCKER_USER_NAME}/.ssh
+    entrypoint: "./poetry_demo/entrypoint_dev.sh"
     
       
